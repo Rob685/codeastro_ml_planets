@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ExoTrainer &mdash; codeastro_exoplanet_predictor 06/25/2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> codeastro_exoplanet_predictor
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">ExoTrainer</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">codeastro_exoplanet_predictor</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>ExoTrainer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/exo_model_predict.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="exotrainer">
+<span id="exo-model-predict-rst"></span><h1>ExoTrainer<a class="headerlink" href="#exotrainer" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-exo_model_predict"></span><dl class="class">
+<dt id="exo_model_predict.ExoTrainer">
+<em class="property">class </em><code class="sig-prename descclassname">exo_model_predict.</code><code class="sig-name descname">ExoTrainer</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">mass_col</em>, <em class="sig-param">temp_col</em>, <em class="sig-param">rad_col</em>, <em class="sig-param">discmethod</em>, <em class="sig-param">test_size</em><span class="sig-paren">)</span><a class="headerlink" href="#exo_model_predict.ExoTrainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class that creates a model that predicts whether a system has more than one planet given a dataset that contains the following features: stellar mass, stellar temperature, stellar radius, and semi major axis of one planet</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.dataframe</em>) – dataframe containing all relevant columns</p></li>
+<li><p><strong>mass_col</strong> (<em>str</em>) – name of column containing stellar mass</p></li>
+<li><p><strong>temp_col</strong> (<em>str</em>) – name of column containing stellar temperature</p></li>
+<li><p><strong>rad_col</strong> (<em>str</em>) – name of column containing stellar radius</p></li>
+<li><p><strong>test_size</strong> (<em>float</em>) – the proportion of the data to be saved for testing</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>model to be used for predicting
+pd.dataframe: dataset for model to be tested on</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>XGBClassifier</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="exo_model_predict.ExoTrainer.make_exomodel">
+<code class="sig-name descname">make_exomodel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exo_model_predict.ExoTrainer.make_exomodel" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses the data provided to it to train a model for predicting the number of planets in a given system. This model is based on the following features: stellar mass, stellar temperature, stellar radius, and semi major axis of one planet</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="exo_model_predict.ExoTrainer.predict_exoplanets">
+<code class="sig-name descname">predict_exoplanets</code><span class="sig-paren">(</span><em class="sig-param">X_test</em>, <em class="sig-param">y_test</em><span class="sig-paren">)</span><a class="headerlink" href="#exo_model_predict.ExoTrainer.predict_exoplanets" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses a model to predict the number of exoplanets that are within a given system on a test dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X_test</strong> (<em>pd.dataframe</em>) – The data that the model should be tested on</p></li>
+<li><p><strong>y_test</strong> (<em>pd.Series</em>) – Column containing the labels that we’re attempting to predict.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Jea Adams, Sofia Covarrubias, Roberto A. Tejada
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
