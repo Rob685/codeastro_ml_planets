@@ -3,8 +3,6 @@ import numpy as np
 from sklearn import datasets, linear_model
 from sklearn.model_selection import train_test_split
 from matplotlib import pyplot as plt
-import tensorflow as tf
-from tensorflow import keras
 from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score
 import pickle as pkl
