@@ -13,3 +13,16 @@ If you'd rather use your own data train a model, you can feel free to do so with
 Two tutorials are included with some sample data so you can try this out for yourself! Find them in the Tutorials directory.  
 
 
+## Requirements
+
+You will need the following to use this package:
+
+numpy
+pandas
+sklearn
+xgboost
+matplotlib
+pickle
+
+
+
