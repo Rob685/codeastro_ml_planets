@@ -8,6 +8,7 @@ from tensorflow import keras
 from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score
 import pickle as pkl
+import pkg_resources
 
 class Predictor:
     """
@@ -56,8 +57,9 @@ class Predictor:
 
         return df
 
-# Load the model 
-model = pkl.load(open("data/num_planets_model.p", "rb"))
+# Load the model
+path_to_model = pkg_resources.resource_filename('exo_predict', 'data/num_planets_model.p')
+model = pkl.load(open(path_to_model, "rb"))
 
 def create_num_planets_predictor():
     """

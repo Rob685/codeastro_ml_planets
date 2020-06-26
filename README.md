@@ -2,6 +2,20 @@
 
 This machine learning planet classification package allows users to predict the number of exoplanets a user is likely to find in a given exoplanet system. It does this based solely on the stellar mass, radius, temperature, and the exoplanet discovery method employed.
 
+## Installation
+
+To install this package, run the following from the command line:
+
+``` sh
+pip install exo_predict
+```
+
+Then, you can import the package in python:
+
+```py
+import exo_predict
+```
+
 ## Functionality
 
 Using the default `exo_predict` module, you can use our model trained on all confirmed planets from the NASA Exoplanet Archive (https://exoplanetarchive.ipac.caltech.edu/) in order to predict whether or not the systems in your data contain one or multiple planets.   
@@ -17,12 +31,12 @@ Two tutorials are included with some sample data so you can try this out for you
 
 You will need the following to use this package:
 
-numpy
-pandas
-sklearn
-xgboost
-matplotlib
-pickle
+numpy  
+pandas  
+sklearn  
+xgboost  
+matplotlib  
+pickle  
 
 
 
