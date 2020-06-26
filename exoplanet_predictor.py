@@ -3,16 +3,15 @@ import numpy as np
 from sklearn import datasets, linear_model
 from sklearn.model_selection import train_test_split
 from matplotlib import pyplot as plt
-import tensorflow as tf
-from tensorflow import keras
 from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score
 import pickle as pkl
 
+
 class Predictor:
     """
     Class that predicts whether a system has more than one planet given a dataset that contains the following features: stellar mass, stellar temperature, stellar radius, and semi major axis of one planet
-    
+
     Args:
         df (pd.ataframe): dataframe containing all relevant columns
         mass_col (str): name of column containing stellar mass
@@ -67,7 +66,9 @@ class Predictor:
 
         return df
 
-model = pkl.load(open("num_planets_model.p", "rb"))
+
+#model = pkl.load(open("num_planets_model.dat", "rb"))
+
 
 def create_num_planets_predictor():
     return Predictor(model=model)
